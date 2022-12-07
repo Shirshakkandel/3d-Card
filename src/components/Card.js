@@ -49,8 +49,17 @@ const Card = () => {
           })}
         </ul>
         {/* card image */}
-        <motion.div style={{ x, y, rotateX, rotateY, z: 100000 }} className="absolute top-[10%] lg:top-12 -right-[57%] lg:-right-64 w-[500px] lg:w-[620px]">
-          <img src={NikeImg} alt="" draggable="false" />
+        <motion.div
+          style={{ x, y, rotateX, rotateY, z: 100000 }}
+          className="absolute top-[10%] overflow-hidden lg:top-12 -right-[57%] lg:-right-64 w-[500px] lg:w-[620px]"
+        >
+          <motion.img
+            initial={{ opacity: 0, x: 1000 }}
+            animate={{ opacity: 1, x: 0, transition: { duration: 1, type: 'spring' } }}
+            src={NikeImg}
+            alt=""
+            draggable="false"
+          />
         </motion.div>
       </motion.div>
     </div>
